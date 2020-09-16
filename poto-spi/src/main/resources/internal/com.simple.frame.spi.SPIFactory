@@ -1,0 +1,2 @@
+adaptive=com.simple.frame.spi.support.AdaptiveSPIFactory
+spi=com.simple.frame.spi.support.SPIExtensionFactory
