@@ -18,6 +18,8 @@ CQRS 架构全称是Command Query Responsibility Segregation，即命令查询�
 
 ![](doc/cqrs.png)
 
+![](doc/cqrs_1.jpg)
+
 ### CQRS把整个系统划分成两块：
 
 - Command Side 写的一边
