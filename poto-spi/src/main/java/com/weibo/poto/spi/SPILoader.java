@@ -22,7 +22,6 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.regex.Pattern;
 
 /**
- * Created by 278076999@qq.com 2018/8/15  10:08
  * 扩展点加载器
  *
  * @author <a href="mailto:278076999@qq.com.com">simple</a>

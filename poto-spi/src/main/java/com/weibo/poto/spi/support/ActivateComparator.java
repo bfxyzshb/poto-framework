@@ -7,7 +7,6 @@ import com.weibo.poto.spi.annotation.Activate;
 import java.util.Comparator;
 
 /**
- * Created by lvxiang 2019/3/2  17:47
  *
  * @author <a href="mailto:278076999@qq.com">simple</a>
  */
