@@ -24,7 +24,6 @@ import java.util.regex.Pattern;
 /**
  * 扩展点加载器
  *
- * @author <a href="mailto:278076999@qq.com.com">simple</a>
  */
 
 public class SPILoader<T> {
