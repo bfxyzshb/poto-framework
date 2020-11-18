@@ -65,8 +65,6 @@ public final class MethodHandler extends AbstractMessageHandler {
             }
         }
 
-        /* special case: methods with equal signature on EventListener must be rejected,
-           because it interferes with the Proxy mechanism */
         if (method.getName().equals("handle")
                 && Arrays.equals(method.getParameterTypes(), new Class[]{Message.class})) {
             throw new PotoException(String.format(

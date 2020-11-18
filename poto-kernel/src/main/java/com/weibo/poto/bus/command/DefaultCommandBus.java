@@ -18,13 +18,9 @@ import static java.lang.String.format;
 public class DefaultCommandBus implements CommandBus {
 
     private static final Logger logger = LoggerFactory.getLogger(DefaultCommandBus.class);
-    private final ConcurrentMap<String, MessageHandler<?>> subscriptions =
-            new ConcurrentHashMap<String, MessageHandler<?>>();
+    private final ConcurrentMap<String, MessageHandler<?>> subscriptions = new ConcurrentHashMap<String, MessageHandler<?>>();
     @Setter
     private List<CommandDispatchInterceptor> interceptors;
-
-    public DefaultCommandBus() {
-    }
 
     public DefaultCommandBus(List<CommandDispatchInterceptor> Interceptors) {
         this.interceptors = Interceptors;
