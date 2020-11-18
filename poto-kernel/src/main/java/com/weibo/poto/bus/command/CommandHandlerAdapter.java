@@ -67,12 +67,6 @@ public class CommandHandlerAdapter implements MessageHandler<CommandMessage> {
         }
     }
 
-
-    /**
-     * Returns the set of commands supported by the annotated command handler managed by this adapter.
-     *
-     * @return the set of commands supported by the annotated command handler
-     */
     public Set<String> supportedCommands() {
         return handlers.keySet();
     }
