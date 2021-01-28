@@ -187,10 +187,8 @@ public class SPILoader<T> {
             return true;
         }
         for (String key : keys) {
-            for (Map.Entry<String, String> entry : url.getParameters().entrySet()) {
-                String k = entry.getKey();
-                String v = entry.getValue();
-                boolean active = (k.equals(key) || k.endsWith("." + key)) && !isEmpty(v);
+            for (String k : url.getParameters()) {
+                boolean active = (k.equals(key) || k.endsWith("." + key)) /*&& !isEmpty(v)*/;
                 if (active) {
                     return true;
                 }

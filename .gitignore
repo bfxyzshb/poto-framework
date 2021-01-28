@@ -31,3 +31,4 @@ test-output
 /app/EvaApp/node_modules/
 *.tar.gz
 *.zip
+*.jar
