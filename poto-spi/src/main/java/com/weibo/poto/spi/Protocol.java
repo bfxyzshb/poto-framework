@@ -1,6 +1,6 @@
 package com.weibo.poto.spi;
 
-import java.util.Map;
+import java.util.Set;
 
 /**
  * 抽象协议,由业务方自己扩展
@@ -14,6 +14,6 @@ public interface Protocol {
 
     String getParameter(String key, String defaultValue);
 
-    Map<String, String> getParameters();
+    Set<String> getParameters();
 
 }
