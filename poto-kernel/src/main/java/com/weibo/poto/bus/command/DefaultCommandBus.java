@@ -15,7 +15,7 @@ import java.util.concurrent.ConcurrentMap;
 
 import static java.lang.String.format;
 
-public class DefaultCommandBus implements CommandBus {
+public class DefaultCommandBus implements CommandBus<Response> {
 
     private static final Logger logger = LoggerFactory.getLogger(DefaultCommandBus.class);
     private final ConcurrentMap<String, MessageHandler<?>> subscriptions = new ConcurrentHashMap<String, MessageHandler<?>>();
