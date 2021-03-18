@@ -40,7 +40,7 @@ public class EnablePotoConfiguration implements ImportBeanDefinitionRegistrar {
     }
 
     /**
-     * 注册默认的Bus
+     * 注册Bus
      */
     public void registerCommandBus(BeanDefinitionRegistry registry, Class<?> beanClass, String beanName, String name) {
         GenericBeanDefinition beanDefinition = new GenericBeanDefinition();
