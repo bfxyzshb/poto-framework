@@ -1,31 +1,33 @@
-HELP.md
+#maven
 target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**
-!**/src/test/**
+captcha/*.png
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
+work/
+
+#eclipse ignore
+.settings/
 .project
-.settings
-.springBeans
-.sts4-cache
+.classpath
+bin/
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
+#idea ignore
+.idea/
 *.ipr
+*.iml
+*.iws
+out/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-
-### VS Code ###
-.vscode/
+#temp ignore
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
+*.swp
+logs
+test-output
+.recommenders
+.DS_Store
+/app/EvaApp/node_modules/
+*.tar.gz
+*.zip
