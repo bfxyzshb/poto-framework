@@ -1,3 +1,0 @@
-adaptive=com.simple.frame.spi.compiler.AdaptiveCompiler
-jdk=com.simple.frame.spi.compiler.JdkCompiler
-javassist=com.simple.frame.spi.compiler.JavassistCompiler

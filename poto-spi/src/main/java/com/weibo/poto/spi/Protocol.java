@@ -8,11 +8,6 @@ import java.util.Set;
  * @author <a href="mailto:278076999@qq.com">simple</a>
  */
 public interface Protocol {
-    String getParameter(String key);
-
-    boolean hasParameter(String key);
-
-    String getParameter(String key, String defaultValue);
 
     Set<String> getParameters();
 

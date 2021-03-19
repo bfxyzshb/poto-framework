@@ -100,4 +100,8 @@ public abstract class AbstractHandlerBeanPostProcessor<T>
             }
         }
     }
+
+    public void setParametersResolverFactory(ParametersResolverFactory parametersResolverFactory) {
+        this.parametersResolverFactory = parametersResolverFactory;
+    }
 }

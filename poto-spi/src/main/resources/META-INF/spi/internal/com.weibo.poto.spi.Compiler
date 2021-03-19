@@ -1,0 +1,3 @@
+adaptive=com.weibo.poto.spi.compiler.AdaptiveCompiler
+jdk=com.weibo.poto.spi.compiler.JdkCompiler
+javassist=com.weibo.poto.spi.compiler.JavassistCompiler

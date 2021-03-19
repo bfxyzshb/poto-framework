@@ -22,6 +22,9 @@ public class DefaultCommandBus implements CommandBus<Response> {
     @Setter
     private List<CommandDispatchInterceptor> interceptors;
 
+    public DefaultCommandBus() {
+    }
+
     public DefaultCommandBus(List<CommandDispatchInterceptor> Interceptors) {
         this.interceptors = Interceptors;
     }

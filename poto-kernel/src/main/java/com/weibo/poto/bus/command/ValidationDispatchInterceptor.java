@@ -3,6 +3,8 @@ package com.weibo.poto.bus.command;
 import com.weibo.poto.exception.PotoException;
 import com.weibo.poto.logger.Logger;
 import com.weibo.poto.logger.LoggerFactory;
+import com.weibo.poto.spi.annotation.Activate;
+import com.weibo.poto.spi.annotation.Adaptive;
 import org.hibernate.validator.HibernateValidator;
 
 import javax.validation.ConstraintViolation;
@@ -15,6 +17,7 @@ import java.util.Set;
  * Hibernate Validator常用注解
  * aut
  */
+@Adaptive
 public class ValidationDispatchInterceptor implements CommandDispatchInterceptor {
     private static final Logger logger = LoggerFactory.getLogger(DefaultCommandBus.class);
     /**

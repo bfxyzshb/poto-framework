@@ -113,19 +113,9 @@ public class SPILoader<T> {
     }
 
 
-    public List<T> getActivateExtension(Protocol url, String key) {
-        return getActivateExtension(url, key, null);
-    }
-
 
     public List<T> getActivateExtension(Protocol url, String[] values) {
         return getActivateExtension(url, values, null);
-    }
-
-
-    public List<T> getActivateExtension(Protocol url, String key, String group) {
-        String value = url.getParameter(key);
-        return getActivateExtension(url, value == null || value.length() == 0 ? null : COMMA_SPLIT_PATTERN.split(value), group);
     }
 
 

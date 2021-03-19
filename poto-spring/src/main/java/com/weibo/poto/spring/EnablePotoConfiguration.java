@@ -10,12 +10,12 @@ import org.springframework.core.type.AnnotationMetadata;
 
 public class EnablePotoConfiguration implements ImportBeanDefinitionRegistrar {
 
-    private static final String EVENT_HANDLER_BEAN_NAME = "-poto-event-handler";
+    private static final String EVENT_HANDLER_BEAN_NAME = "poto-event-handler";
 
-    private static final String COMMAND_HANDLER_BEAN_NAME = "-poto-command-handler";
+    private static final String COMMAND_HANDLER_BEAN_NAME = "poto-command-handler";
 
-    private static final String DEFAULT_COMMAND_BUS = "command_bus";
-    private static final String DEFAULT_EVENT_BUS = "event_bus";
+    private static final String DEFAULT_COMMAND_BUS = "command-bus";
+    private static final String DEFAULT_EVENT_BUS = "event-bus";
 
 
     @Override

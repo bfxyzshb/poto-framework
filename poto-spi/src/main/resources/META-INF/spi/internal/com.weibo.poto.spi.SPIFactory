@@ -1,0 +1,2 @@
+adaptive=com.weibo.poto.spi.support.AdaptiveSPIFactory
+spi=com.weibo.poto.spi.support.SPIExtensionFactory
