@@ -57,7 +57,7 @@ public class Response extends DTO {
 
     @Override
     public String toString() {
-        return "Response [isSuccess=" + isSuccess + ", errCode=" + errCode + ", errMessage=" + errMessage + "]";
+        return "Response [isSuccess=" + isSuccess + ",data=" + data + ", errCode=" + errCode + ", errMessage=" + errMessage + "]";
     }
 
     public static Response buildFailure(String errCode, String errMessage) {

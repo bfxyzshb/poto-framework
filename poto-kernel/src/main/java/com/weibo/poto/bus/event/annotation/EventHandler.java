@@ -10,7 +10,6 @@ import java.lang.annotation.*;
  */
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.TYPE})
-@Component
+@Target({ElementType.METHOD})
 public @interface EventHandler {
 }
