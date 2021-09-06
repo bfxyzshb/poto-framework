@@ -1,20 +1,9 @@
-package com.weibo.poto.repository.objectDiff.googlecode;
-
-import com.alibaba.fastjson.JSON;
-import com.google.common.collect.Lists;
-import com.weibo.poto.repository.objectDiff.model.Item;
-import com.weibo.poto.repository.objectDiff.model.Model;
-import com.weibo.poto.repository.objectDiff.model.Vo;
-import difflib.*;
-import difflib.DiffRow.Tag;
-
-import java.util.Collections;
-import java.util.List;
+package googlecode;
 
 
 public class GooglecodeDiff {
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         Model working = new Model(1, "name", new Vo(1, "desc"), Lists.newArrayList(new Item(1, "name")));
         Model base = new Model(1, "name", new Vo(1, "desc"), Lists.newArrayList(new Item(1, "name"), new Item(2, "name")));
 
@@ -60,6 +49,6 @@ public class GooglecodeDiff {
                 }
             }
         }
-    }
+    }*/
 
 }

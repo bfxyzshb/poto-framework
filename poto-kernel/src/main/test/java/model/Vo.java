@@ -1,4 +1,4 @@
-package com.weibo.poto.repository.objectDiff.model;
+package model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

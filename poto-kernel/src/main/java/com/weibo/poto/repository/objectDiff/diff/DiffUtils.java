@@ -21,8 +21,9 @@ public class DiffUtils {
             if (!List.class.isAssignableFrom(node.getValueType()) && !node.isRootNode() && node.getState() == State.CHANGED && !entityDiff.isSelfModified()) {
                 entityDiff.setSelfModified(true);
             }
-            final Object snapshotValue = node.canonicalGet(snapshot);
+            /*final Object snapshotValue = node.canonicalGet(snapshot);
             final String message = node.getState() + ", " + snapshotValue;
+            System.out.println("======="+message);*/
         });
 
         return entityDiff;

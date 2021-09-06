@@ -1,7 +1,8 @@
 package com.weibo.poto.repository.objectDiff.diff;
 
 import com.google.common.base.Splitter;
-import com.weibo.poto.repository.objectDiff.domain.Entity;
+import com.weibo.poto.entity.DomainObject;
+import com.weibo.poto.entity.Identifier;
 import de.danielbechler.diff.node.DiffNode;
 import de.danielbechler.diff.node.Visit;
 import de.danielbechler.diff.path.NodePath;
@@ -32,11 +33,14 @@ public class EntityDiff {
     public Diff getDiff(String propertyName) {
         final NodePath itemPath = NodePath.startBuilding().propertyName(propertyName).build();
         final DiffNode node = diff.getChild(itemPath);
-        final Diff diffResult;
+        Diff diffResult = new DiffObject();
+        if (node == null) {
+            return diffResult;
+        }
         if (List.class.isAssignableFrom(node.getValueType())) {
             final DiffList diff = new DiffList();
             node.visitChildren((DiffNode cnode, Visit cvisit) -> {
-                if (!Entity.class.isAssignableFrom(cnode.getValueType())) {
+                if (!DomainObject.class.isAssignableFrom(cnode.getValueType())) {
                     return;
                 }
 
@@ -57,20 +61,18 @@ public class EntityDiff {
                 }
             });
 
-            final Map<Long, List<Diff>> collect = diff.stream()
-                .collect(Collectors.groupingBy(d -> Objects.nonNull(d.getNewValue()) ? ((Entity) d.getNewValue()).getId() : ((Entity) d.getOldVlaue()).getId()));
+            final Map<Identifier, List<Diff>> collect = diff.stream()
+                    .collect(Collectors.groupingBy(d -> Objects.nonNull(d.getNewValue()) ? ((DomainObject<Identifier>) d.getNewValue()).getId() : ((DomainObject<Identifier>) d.getOldVlaue()).getId()));
 
-            collect.forEach((k,v) -> {
+            collect.forEach((k, v) -> {
                 if (v.size() > 1) {
                     final Map<DiffType, List<Diff>> typeListMap = v.stream().collect(Collectors.groupingBy(Diff::getType));
                     diff.add(new DiffObject(DiffType.Modified, typeListMap.get(DiffType.Added).get(0).getNewValue(),
-                        typeListMap.get(DiffType.Removed).get(0).getOldVlaue()));
+                            typeListMap.get(DiffType.Removed).get(0).getOldVlaue()));
                     diff.removeAll(v);
                 }
             });
             diffResult = diff;
-        } else {
-            diffResult = new DiffObject();
         }
         return diffResult;
     }
