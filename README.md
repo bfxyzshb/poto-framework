@@ -1,7 +1,6 @@
-<<<<<<< HEAD
+
 # poto-framework
 
-=======
 >>>>>>> 29fcd689d547cfa23f566b17e13de6e12429067b
 ### 吐槽
 - 目前微服务很火，而且现在说架构、架构、架构（说三遍）都是基于业务的宏观设计，而恰恰忽略了代码层面的架构，所有现在大部分的项目是微服务划分的很好，
@@ -23,8 +22,6 @@ CQRS 架构全称是Command Query Responsibility Segregation，即命令查询�
 
 ![](doc/cqrs.png)
 
-![](doc/cqrs_1.jpg)
-
 ### CQRS把整个系统划分成两块：
 
 - Command Side 写的一边
@@ -32,7 +29,5 @@ CQRS 架构全称是Command Query Responsibility Segregation，即命令查询�
 - Query Side 读的一边
 接受所有查询请求，直接返回数据。
 
-<<<<<<< HEAD
-=======
 # poto-framework
->>>>>>> 29fcd689d547cfa23f566b17e13de6e12429067b
+

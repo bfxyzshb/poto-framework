@@ -11,14 +11,8 @@ import java.util.Set;
  * @Version 1.0
  */
 public class DefaultProtocal implements Protocol {
-<<<<<<< HEAD
     @Override
     public String getExtensionName() {
-=======
-
-    @Override
-    public Set<String> getParameters() {
->>>>>>> 29fcd689d547cfa23f566b17e13de6e12429067b
         return null;
     }
 

@@ -17,13 +17,11 @@ public class SpringBeanReferenceBuilderFactory {
         if (SpringBeanReferenceBuilder.EVENT_BUS_NAME.equalsIgnoreCase(name) && holder.get(SpringBeanReferenceBuilder.EVENT_BUS_NAME) == null) {
             holder.putIfAbsent(name, new CommandBusReferenceBuilder());
         }
-<<<<<<< HEAD
         if (SpringBeanReferenceBuilder.EXTENSIONEXECTOR_NAME.equalsIgnoreCase(name) && holder.get(SpringBeanReferenceBuilder.EXTENSIONEXECTOR_NAME) == null) {
             holder.putIfAbsent(name, new CommandBusReferenceBuilder());
         }
-=======
->>>>>>> 29fcd689d547cfa23f566b17e13de6e12429067b
         return holder.get(name);
     }
 
 }
+

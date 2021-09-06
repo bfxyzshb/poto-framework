@@ -2,10 +2,7 @@ package com.weibo.poto.spring;
 
 import com.weibo.poto.bus.command.DefaultCommandBus;
 import com.weibo.poto.bus.event.DefaultEventBus;
-<<<<<<< HEAD
 import com.weibo.poto.spi.ExtensionExecutor;
-=======
->>>>>>> 29fcd689d547cfa23f566b17e13de6e12429067b
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.GenericBeanDefinition;
 import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
@@ -20,10 +17,7 @@ public class EnablePotoConfiguration implements ImportBeanDefinitionRegistrar {
 
     private static final String DEFAULT_COMMAND_BUS = "command-bus";
     private static final String DEFAULT_EVENT_BUS = "event-bus";
-<<<<<<< HEAD
     private static final String EXTENSIONEXECTOR = "ExtensionExecutor";
-=======
->>>>>>> 29fcd689d547cfa23f566b17e13de6e12429067b
 
 
     @Override
@@ -33,10 +27,7 @@ public class EnablePotoConfiguration implements ImportBeanDefinitionRegistrar {
         //注册commandBus 避免spring boot 配置扫描包scan
         registerCommandBus(registry, DefaultCommandBus.class, DEFAULT_COMMAND_BUS, SpringBeanReferenceBuilder.COMMAND_BUS_NAME);
         registerEventBus(registry, DefaultEventBus.class, DEFAULT_EVENT_BUS, SpringBeanReferenceBuilder.EVENT_BUS_NAME);
-<<<<<<< HEAD
         registerExtensionExecutor(registry, ExtensionExecutor.class, EXTENSIONEXECTOR, SpringBeanReferenceBuilder.EXTENSIONEXECTOR_NAME);
-=======
->>>>>>> 29fcd689d547cfa23f566b17e13de6e12429067b
 
     }
 
@@ -57,13 +48,8 @@ public class EnablePotoConfiguration implements ImportBeanDefinitionRegistrar {
     public void registerCommandBus(BeanDefinitionRegistry registry, Class<?> beanClass, String beanName, String name) {
         GenericBeanDefinition beanDefinition = new GenericBeanDefinition();
         beanDefinition.setBeanClass(beanClass);
-<<<<<<< HEAD
         /*beanDefinition.getPropertyValues().add("interceptors",
                 SpringBeanReferenceBuilderFactory.getSpringBeanReferenceBuilderFactory(name).getBeanReference(registry));*/
-=======
-        beanDefinition.getPropertyValues().add("interceptors",
-                SpringBeanReferenceBuilderFactory.getSpringBeanReferenceBuilderFactory(name).getBeanReference(registry));
->>>>>>> 29fcd689d547cfa23f566b17e13de6e12429067b
         registry.registerBeanDefinition(beanName, beanDefinition);
     }
 
@@ -73,14 +59,11 @@ public class EnablePotoConfiguration implements ImportBeanDefinitionRegistrar {
         registry.registerBeanDefinition(beanName, beanDefinition);
     }
 
-<<<<<<< HEAD
     public void registerExtensionExecutor(BeanDefinitionRegistry registry, Class<?> beanClass, String beanName, String name) {
         GenericBeanDefinition beanDefinition = new GenericBeanDefinition();
         beanDefinition.setBeanClass(beanClass);
         registry.registerBeanDefinition(beanName, beanDefinition);
     }
 
-=======
->>>>>>> 29fcd689d547cfa23f566b17e13de6e12429067b
 
 }
