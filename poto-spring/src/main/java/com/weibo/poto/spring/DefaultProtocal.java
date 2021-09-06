@@ -2,8 +2,6 @@ package com.weibo.poto.spring;
 
 import com.weibo.poto.spi.Protocol;
 
-import java.util.Set;
-
 /**
  * @ClassName DefaultProtocal
  * @Author hebiao1
