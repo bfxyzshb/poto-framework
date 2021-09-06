@@ -81,6 +81,7 @@
             <artifactId>hibernate-validator</artifactId>
             <version>6.0.7.Final</version>
         </dependency>
+<<<<<<< HEAD
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
@@ -112,6 +113,8 @@
             <artifactId>atlas-npm-identities</artifactId>
             <version>${project.version}</version>
         </dependency>
+=======
+>>>>>>> 29fcd689d547cfa23f566b17e13de6e12429067b
     </dependencies>
 
 </project>

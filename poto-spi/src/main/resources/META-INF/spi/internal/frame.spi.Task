@@ -1,5 +1,9 @@
 #一个接口有多个扩展实现,可通过注解加载不同的扩展实现
 taskOne=frame.spi.impl.TaskImplOne
 taskTwo=frame.spi.impl.TaskImplTwo
+<<<<<<< HEAD
 taskThree=frame.spi.impl.TaskImplThree
 taskFour=frame.spi.impl.TaskImplFour
+=======
+taskThree=frame.spi.impl.TaskImplThree
+>>>>>>> 29fcd689d547cfa23f566b17e13de6e12429067b

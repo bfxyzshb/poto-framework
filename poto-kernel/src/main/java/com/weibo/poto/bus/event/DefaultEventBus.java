@@ -39,7 +39,11 @@ public class DefaultEventBus implements EventBus<EventMessage, Object> {
     }
 
     @Override
+<<<<<<< HEAD
     public Object dispatch(EventMessage event) {
+=======
+    public Object dispatch(Object event) {
+>>>>>>> 29fcd689d547cfa23f566b17e13de6e12429067b
         if (CollectionUtils.isEmpty(handlers)) {
             return null;
         }

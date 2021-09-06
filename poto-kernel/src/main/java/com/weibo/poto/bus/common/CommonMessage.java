@@ -2,7 +2,10 @@ package com.weibo.poto.bus.common;
 
 import com.weibo.poto.bus.command.CommandMessage;
 import com.weibo.poto.bus.event.EventMessage;
+<<<<<<< HEAD
 import com.weibo.poto.domain.Message;
+=======
+>>>>>>> 29fcd689d547cfa23f566b17e13de6e12429067b
 
 /**
  * 通用command消息
@@ -21,7 +24,11 @@ public class CommonMessage<T> implements CommandMessage, EventMessage {
         if (CommandMessage.class.isInstance(command)) {
             return (CommandMessage) command;
         }
+<<<<<<< HEAD
         return new CommonMessage(command.getClass().getName(), command, command);
+=======
+        return new CommonMessage<Object>(command.getClass().getName(), command);
+>>>>>>> 29fcd689d547cfa23f566b17e13de6e12429067b
     }
 
     public static EventMessage asEventMessage(Object event) {
@@ -32,7 +39,11 @@ public class CommonMessage<T> implements CommandMessage, EventMessage {
         this.classType = classType;
     }
 
+<<<<<<< HEAD
     public CommonMessage(String commandName, T classType, Object payload) {
+=======
+    public CommonMessage(String commandName, T classType) {
+>>>>>>> 29fcd689d547cfa23f566b17e13de6e12429067b
         this.commandName = commandName;
         this.classType = classType;
     }

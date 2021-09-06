@@ -54,6 +54,7 @@ public class CommandHandlerAdapter implements MessageHandler<CommandMessage> {
 
 
     @Override
+<<<<<<< HEAD
     public Object handle(CommandMessage commandMessage) throws Throwable {
         try {
             //获取真正的handler
@@ -62,6 +63,16 @@ public class CommandHandlerAdapter implements MessageHandler<CommandMessage> {
                 throw new PotoException("No handler found for command " + commandMessage.getCommandName());
             }
             return handler.invoke(target, commandMessage);
+=======
+    public Object handle(CommandMessage command) throws Throwable {
+        try {
+            //获取真正的handler
+            final MethodHandler handler = handlers.get(command.getCommandName());
+            if (handler == null) {
+                throw new PotoException("No handler found for command " + command.getCommandName());
+            }
+            return handler.invoke(target, command);
+>>>>>>> 29fcd689d547cfa23f566b17e13de6e12429067b
         } catch (InvocationTargetException e) {
             throw e.getCause();
         }

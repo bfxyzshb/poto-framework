@@ -10,6 +10,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+<<<<<<< HEAD
+=======
+/**
+ * AdaptiveExtensionFactory
+ */
+>>>>>>> 29fcd689d547cfa23f566b17e13de6e12429067b
 @Adaptive
 public class AdaptiveSPIFactory implements SPIFactory {
     private final List<SPIFactory> factories;
