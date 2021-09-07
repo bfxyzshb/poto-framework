@@ -26,5 +26,4 @@ CQRS 架构全称是Command Query Responsibility Segregation，即命令查询�
 - Query Side 读的一边
 接受所有查询请求，直接返回数据。
 
-# poto-framework
 
