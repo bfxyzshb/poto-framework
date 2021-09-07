@@ -1,7 +1,7 @@
 package com.weibo.poto.repository.objectDiff.diff;
 
 import com.google.common.base.Splitter;
-import com.weibo.poto.entity.DomainObject;
+import com.weibo.poto.entity.AbstractDomainObject;
 import com.weibo.poto.entity.Identifier;
 import de.danielbechler.diff.node.DiffNode;
 import de.danielbechler.diff.node.Visit;
@@ -40,7 +40,7 @@ public class EntityDiff {
         if (List.class.isAssignableFrom(node.getValueType())) {
             final DiffList diff = new DiffList();
             node.visitChildren((DiffNode cnode, Visit cvisit) -> {
-                if (!DomainObject.class.isAssignableFrom(cnode.getValueType())) {
+                if (!AbstractDomainObject.class.isAssignableFrom(cnode.getValueType())) {
                     return;
                 }
 
@@ -62,17 +62,34 @@ public class EntityDiff {
             });
 
             final Map<Identifier, List<Diff>> collect = diff.stream()
-                    .collect(Collectors.groupingBy(d -> Objects.nonNull(d.getNewValue()) ? ((DomainObject<Identifier>) d.getNewValue()).getId() : ((DomainObject<Identifier>) d.getOldVlaue()).getId()));
+                    .collect(Collectors.groupingBy(d -> Objects.nonNull(d.getNewValue()) ? ((AbstractDomainObject<Identifier>) d.getNewValue()).getId() : ((AbstractDomainObject<Identifier>) d.getOldVlaue()).getId()));
 
             collect.forEach((k, v) -> {
                 if (v.size() > 1) {
                     final Map<DiffType, List<Diff>> typeListMap = v.stream().collect(Collectors.groupingBy(Diff::getType));
-                    diff.add(new DiffObject(DiffType.Modified, typeListMap.get(DiffType.Added).get(0).getNewValue(),
-                            typeListMap.get(DiffType.Removed).get(0).getOldVlaue()));
+                    diff.add(new DiffObject(DiffType.Modified, typeListMap.get(DiffType.Added) == null ? null : typeListMap.get(DiffType.Added).get(0).getNewValue(),
+                            typeListMap.get(DiffType.Removed) == null ? null : typeListMap.get(DiffType.Removed).get(0).getOldVlaue()));
                     diff.removeAll(v);
                 }
             });
             diffResult = diff;
+        } else if (node.isChanged()) {
+            diffResult = new Diff() {
+                @Override
+                public DiffType getType() {
+                    return null;
+                }
+
+                @Override
+                public Object getNewValue() {
+                    return node.canonicalGet(obj);
+                }
+
+                @Override
+                public Object getOldVlaue() {
+                    return node.canonicalGet(snapshot);
+                }
+            };
         }
         return diffResult;
     }

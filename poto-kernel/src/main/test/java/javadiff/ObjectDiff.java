@@ -13,19 +13,19 @@ import org.junit.Test;
 public class ObjectDiff {
     @Test
     public void test() {
+        Model base = new Model(new ModelId(1l), "name",new Vo(new VoId(1L), "desc"), Lists.newArrayList(new Item(new ItemId(1L), "name")));
+        Model working = new Model(new ModelId(1l), "name",new Vo(new VoId(1L), "desc1"),  Lists.newArrayList(new Item(new ItemId(1L), "name1")));
 
-        Model working = new Model(new ModelId(1l), "name", new Vo(1, "desc"), Lists.newArrayList(new Item(new ItemId(1L), "name1"), new Item(new ItemId(3L), "name")));
-        Model base = new Model(new ModelId(1l), "name", new Vo(1, "desc1"), Lists.newArrayList(new Item(new ItemId(1L), "name"), new Item(new ItemId(2L), "name")));
 
         final EntityDiff entityDiff = DiffUtils.diff(base, working);
-
+        //System.out.println(entityDiff.getDiff("vo").getNewValue());
         final Diff diff = entityDiff.getDiff("items");
 
         if (diff instanceof DiffList) {
             DiffList dl = (DiffList) diff;
             for (Diff d : dl) {
                 System.err.println(d.getType());
-                System.err.println(JSON.toJSONString(d.getNewValue()));
+                System.err.println(d.getNewValue());
                 System.err.println(JSON.toJSONString(d.getOldVlaue()));
             }
         }

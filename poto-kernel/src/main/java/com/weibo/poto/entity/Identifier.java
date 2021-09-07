@@ -20,4 +20,8 @@ public abstract class Identifier<T> implements Serializable {
         return Objects.hash(this.getId());
     }
 
+    @Override
+    public String toString() {
+        return "Identifier="+getId();
+    }
 }

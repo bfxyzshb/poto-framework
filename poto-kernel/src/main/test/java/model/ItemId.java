@@ -19,10 +19,10 @@ public class ItemId extends Identifier<Long> {
 
     @Override
     public Long getId() {
-        return null;
+        return id;
     }
 
-    @Override
+   /* @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -33,5 +33,5 @@ public class ItemId extends Identifier<Long> {
     @Override
     public int hashCode() {
         return Objects.hash(id);
-    }
+    }*/
 }
