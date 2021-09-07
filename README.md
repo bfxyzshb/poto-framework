@@ -1,6 +1,6 @@
 # poto-framework
 
-- process-oriented to object 面向过程到面向对象，缩写poto
+- process-oriented to object 面向过程到面向对象编程，缩写poto
 
 ### 吐槽
 - 目前微服务很火，而且现在说架构、架构、架构（说三遍）都是基于业务的宏观设计，而恰恰忽略了代码层面的架构，所有现在大部分的项目是微服务划分的很好，
