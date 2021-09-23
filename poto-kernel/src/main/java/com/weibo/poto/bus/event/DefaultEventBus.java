@@ -16,7 +16,7 @@ import java.util.List;
  * @Date 2020/7/12 9:19 下午
  * @Version 1.0
  */
-public class DefaultEventBus implements EventBus<EventMessage, Object> {
+public class DefaultEventBus implements EventBus {
     private List<MessageHandler> handlers = new ArrayList<>();
     private static final Logger logger = LoggerFactory.getLogger(DefaultEventBus.class);
 

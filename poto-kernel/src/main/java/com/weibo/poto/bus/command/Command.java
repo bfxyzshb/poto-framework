@@ -10,7 +10,12 @@ import com.weibo.poto.spi.Protocol;
  * @Version 1.0
  */
 public abstract class Command extends DTO {
-    private Protocol protocol;
+    private Protocol protocol=new Protocol() {
+        @Override
+        public String getExtensionName() {
+            return null;
+        }
+    };
 
     public void setProtocol(Protocol protocol) {
         this.protocol = protocol;

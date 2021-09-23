@@ -15,7 +15,7 @@ import java.util.concurrent.ConcurrentMap;
 
 import static java.lang.String.format;
 
-public class DefaultCommandBus implements CommandBus<Command, Response> {
+public class DefaultCommandBus implements CommandBus {
 
     private static final Logger logger = LoggerFactory.getLogger(DefaultCommandBus.class);
     private final ConcurrentMap<String, MessageHandler<?>> subscriptions = new ConcurrentHashMap<String, MessageHandler<?>>();
@@ -53,7 +53,7 @@ public class DefaultCommandBus implements CommandBus<Command, Response> {
             //后置拦截器
             postIntercept(command, response);
         }
-        return null;
+        return Response.buildFailure();
     }
 
     @Override

@@ -5,7 +5,7 @@ import com.weibo.poto.bus.common.DTO;
 /**
  * command 处理结果对象
  */
-public class Response extends DTO {
+public class Response<T> extends DTO {
 
     private static final long serialVersionUID = 1L;
 
@@ -15,7 +15,7 @@ public class Response extends DTO {
 
     private String errMessage;
 
-    private Object data;
+    private T data;
 
     public boolean isSuccess() {
         return isSuccess;
@@ -47,11 +47,11 @@ public class Response extends DTO {
     }
 
 
-    public Object getData() {
+    public T getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(T data) {
         this.data = data;
     }
 
@@ -65,6 +65,12 @@ public class Response extends DTO {
         response.setSuccess(false);
         response.setErrCode(errCode);
         response.setErrMessage(errMessage);
+        return response;
+    }
+
+    public static Response buildFailure() {
+        Response response = new Response();
+        response.setSuccess(false);
         return response;
     }
 
