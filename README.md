@@ -1,5 +1,5 @@
 # poto-framework
-
+![GitHub top language](https://img.shields.io/github/languages/top/bfxyzshb/poto-framework)
 - process-oriented to object 面向过程到面向对象编程，缩写poto
 
 ### 吐槽
