@@ -8,13 +8,11 @@ import javax.validation.constraints.NotNull;
 public interface Repository<T extends AggregateRoot<ID>, ID extends Identifier> {
     /**
      * 将一个Aggregate附属到一个Repository，让它变为可追踪。
-     * Change-Tracking在下文会讲，非必须
      */
     void attach(@NotNull T aggregate);
 
     /**
      * 解除一个Aggregate的追踪
-     * Change-Tracking在下文会讲，非必须
      */
     void detach(@NotNull T aggregate);
 

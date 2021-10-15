@@ -10,7 +10,6 @@ import javax.validation.constraints.NotNull;
 
 /**
  * @ClassName DbRepositorySupport
- * @Description TODO
  * @Author hebiao1
  * @Date 2021/8/31 11:16 上午
  * @Version 1.0
@@ -32,8 +31,11 @@ public abstract class DbRepositorySupport<T extends AggregateRoot<ID>, ID extend
      * 这几个方法是继承的子类应该去实现的
      */
     protected abstract void onInsert(T aggregate);
+
     protected abstract T onSelect(ID id);
+
     protected abstract void onUpdate(T aggregate, EntityDiff diff);
+
     protected abstract void onDelete(T aggregate);
 
     /**
@@ -78,17 +80,12 @@ public abstract class DbRepositorySupport<T extends AggregateRoot<ID>, ID extend
             this.attach(aggregate);
             return;
         }
-
-        // 做Diff
         EntityDiff diff = aggregateManager.detectChanges(aggregate);
         if (diff.isEmpty()) {
             return;
         }
-
-        // 调用UPDATE
         this.onUpdate(aggregate, diff);
-
-        // 最终将DB带来的变化更新回AggregateManager
+        //将DB带来的变化更新回AggregateManager
         aggregateManager.merge(aggregate);
     }
 }
