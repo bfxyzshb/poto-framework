@@ -57,5 +57,5 @@ CQRS 架构全称是Command Query Responsibility Segregation，即命令查询�
 - 当一个命令Command请求过来时，会通过应用层的CommandService去协调领域层工作，而一个查询Query请求过来时，则直接通过基础实施的实现与数据库或者外部服务交互。我们所有的抽象都定义在圆圈内部，实现都在基础设施。
 
 ### 如何使用
-- https://github.com/bfxyzshb/sample-poto
+- http://git.intra.weibo.com/hebiao1/sample-poto
 
