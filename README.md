@@ -1,5 +1,6 @@
 ![GitHub License](https://img.shields.io/github/license/bfxyzshb/poto-framework)
 ![](https://badgen.net/github/stars/bfxyzshb/poto-framework)
+![](https://badgen.net/github/issues/bfxyzshb/poto-framework)
 
 # poto-framework
 
