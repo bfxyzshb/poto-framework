@@ -1,3 +1,6 @@
+![GitHub License](https://img.shields.io/github/license/bfxyzshb/poto-framework)
+![](https://badgen.net/github/stars/bfxyzshb/poto-framework)
+
 # poto-framework
 
 - process-oriented to object 面向过程到面向对象编程，缩写poto
